@@ -30,7 +30,6 @@ export class Bird {
 /**
  * Clase que modela un gorrión.
  * @extends Bird
- * @implements Flyable
  */
 export class Sparrow extends Bird implements Flyable {
   /**
