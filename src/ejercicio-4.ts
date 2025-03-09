@@ -1,31 +1,42 @@
 /**
  * Este código violaba el principio de segregación de interfaces
  */
-// Interface for printing
-interface Printable {
+
+/**
+ * Interface for printing
+ */
+export interface Printable {
   print(): void;
 }
 
-// Interface for scanning
-interface Scannable {
+/**
+ * Interface for scanning
+ */
+export interface Scannable {
   scan(): void;
 }
 
-// Printer class implementing Printable interface
+/**
+ * Printer class implementing Printable interface
+ */
 export class Printer implements Printable {
   print(): void {
     console.log('Printing...');
   }
 }
 
-// Scanner class implementing Scannable interface
+/**
+ * Scanner class implementing Scannable interface
+ */
 export class Scanner implements Scannable {
   scan(): void {
     console.log('Scanning...');
   }
 }
 
-// PrinterScanner class implementing both Printable and Scannable interfaces
+/**
+ * PrinterScanner class implementing both Printable and Scannable interfaces
+ */
 export class PrinterScanner implements Printable, Scannable {
   print(): void {
     console.log('Printing...');

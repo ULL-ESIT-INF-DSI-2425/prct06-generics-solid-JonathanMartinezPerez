@@ -4,17 +4,23 @@
  */
 import * as fs from "fs";
 
-// Interface for reading files
-interface IFileReader {
+/**
+ * Interface for reading files
+ */
+export interface IFileReader {
   readFile(filePath: string): string;
 }
 
-// Interface for writing files
-interface IFileWriter {
+/**
+ * Interface for writing files
+ */
+export interface IFileWriter {
   writeFile(filePath: string, data: string): void;
 }
 
-// Implementation of IFileReader using fs module
+/**
+ * Implementation of IFileReader using fs module
+ */
 export class FileReader implements IFileReader {
   public readFile(filePath: string): string {
     try {
@@ -27,7 +33,9 @@ export class FileReader implements IFileReader {
   }
 }
 
-// Implementation of IFileWriter using fs module
+/**
+ * Implementation of IFileWriter using fs module
+ */
 export class FileWriter implements IFileWriter {
   public writeFile(filePath: string, data: string): void {
     try {
@@ -39,7 +47,9 @@ export class FileWriter implements IFileWriter {
   }
 }
 
-// FileManager class that depends on abstractions
+/**
+ * FileManager class that depends on abstractions
+ */
 export class FileManager {
   constructor(
     private filePath: string,
