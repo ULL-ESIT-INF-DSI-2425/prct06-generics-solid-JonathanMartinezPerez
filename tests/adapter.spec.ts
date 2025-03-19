@@ -51,7 +51,6 @@ describe('RationalToComplexAdapter', () => {
     const adapter = new RationalToComplexAdapter(rational);
     const complex = new ComplexNumber(1, 1); // 1 + i
     const result = adapter.divide(complex);
-    const denominator = 1 * 1 + 1 * 1; // 1^2 + 1^2 = 2
     expect(result.real).toBeCloseTo(0.375); // (3/4 * 1 + 0 * 1) / 2
     expect(result.imaginary).toBeCloseTo(-0.375); // (0 * 1 - 3/4 * 1) / 2
   });
