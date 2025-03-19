@@ -4,7 +4,6 @@ import { ArithmeticableCollection, Arithmeticable } from "./arithmeticable.js"
 /**
  * Clase que representa un número racional.
  * Implementa la interfaz Arithmeticable para poder realizar operaciones aritméticas.
- * @implements Arithmeticable<RationalNumber>
  */
 export class RationalNumber implements Arithmeticable<RationalNumber> {
     constructor(public numerator: number, public denominator: number) {
