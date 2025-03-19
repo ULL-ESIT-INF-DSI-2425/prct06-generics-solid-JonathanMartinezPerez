@@ -12,4 +12,20 @@ describe('Adapter', () => {
     expect(adapter.imaginary).toBe(0);
     expect(adapter.getRational()).toBe(rational);
   });
+
+  it('should adapt a RationalNumber to a ComplexNumber', () => {
+    const rational = new RationalNumber(1, 2);
+    const adapter = new RationalToComplexAdapter(rational);
+    expect(adapter.real).toBe(0.5);
+    expect(adapter.imaginary).toBe(0);
+    expect(adapter.getRational()).toBe(rational);
+  });
+
+  it('should adapt a RationalNumber to a ComplexNumber', () => {
+    const rational = new RationalNumber(1, 2);
+    const adapter = new RationalToComplexAdapter(rational);
+    expect(adapter.real).toBe(0.5);
+    expect(adapter.imaginary).toBe(0);
+    expect(adapter.getRational()).toBe(rational);
+  });
 });
