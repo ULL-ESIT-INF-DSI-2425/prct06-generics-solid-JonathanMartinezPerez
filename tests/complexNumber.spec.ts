@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { ComplexNumber, ArithmeticableCollection } from '../src/ejercicioclase-1';
+import { ArithmeticableCollection } from '../src/arithmeticable';
+import { ComplexNumber } from '../src/complexNumber';
 
 describe('ComplexNumber', () => {
     it('should add two complex numbers correctly', () => {

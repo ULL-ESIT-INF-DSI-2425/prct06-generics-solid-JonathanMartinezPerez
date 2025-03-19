@@ -2,11 +2,12 @@
   "name": "doc-test",
   "version": "1.0.0",
   "main": "basicFunctions.js",
+  "type":"module",
   "scripts": {
-    "dev": "tsc-watch --onSuccess \"node dist/ejercicioclase-1.js\"",
+    "dev": "tsc-watch --onSuccess \"node dist/adapter.js\"",
     "doc": "typedoc",
     "test": "vitest run",
-    "coverage": "vitest run --coverage --coverage.include src/* tests/*"
+    "coverage": "vitest run --coverage --coverage.include '**/src/*'"
   },
   "keywords": [],
   "author": "",
