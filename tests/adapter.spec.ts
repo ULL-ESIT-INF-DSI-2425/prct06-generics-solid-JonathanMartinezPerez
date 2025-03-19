@@ -1,31 +1,51 @@
-import { ComplexNumber } from "../src/complexNumber.js"
-import { ArithmeticableCollection, Arithmeticable } from "../src/arithmeticable.js"
-import { RationalNumber } from "../src/rationalNumber.js"
-import { RationalToComplexAdapter } from "../src/adapter.js"
-import { describe, it, expect } from "vitest"
+import { RationalNumber } from "../src/rationalNumber.js";
+import { describe, it, expect } from "vitest";
 
-describe('Adapter', () => {
-  it('should adapt a RationalNumber to a ComplexNumber', () => {
-    const rational = new RationalNumber(1, 2);
-    const adapter = new RationalToComplexAdapter(rational);
-    expect(adapter.real).toBe(0.5);
-    expect(adapter.imaginary).toBe(0);
-    expect(adapter.getRational()).toBe(rational);
+describe('RationalNumber', () => {
+  it('should create a RationalNumber with valid numerator and denominator', () => {
+    const rational = new RationalNumber(3, 4);
+    expect(rational.numerator).toBe(3);
+    expect(rational.denominator).toBe(4);
   });
 
-  it('should adapt a RationalNumber to a ComplexNumber', () => {
-    const rational = new RationalNumber(1, 2);
-    const adapter = new RationalToComplexAdapter(rational);
-    expect(adapter.real).toBe(0.5);
-    expect(adapter.imaginary).toBe(0);
-    expect(adapter.getRational()).toBe(rational);
+  it('should throw an error when the denominator is zero', () => {
+    expect(() => new RationalNumber(1, 0)).toThrow("El denominador no puede ser cero.");
   });
 
-  it('should adapt a RationalNumber to a ComplexNumber', () => {
-    const rational = new RationalNumber(1, 2);
-    const adapter = new RationalToComplexAdapter(rational);
-    expect(adapter.real).toBe(0.5);
-    expect(adapter.imaginary).toBe(0);
-    expect(adapter.getRational()).toBe(rational);
+  it('should add two RationalNumbers correctly', () => {
+    const rational1 = new RationalNumber(1, 2);
+    const rational2 = new RationalNumber(1, 3);
+    const result = rational1.add(rational2);
+    expect(result.numerator).toBe(5);
+    expect(result.denominator).toBe(6);
+  });
+
+  it('should subtract two RationalNumbers correctly', () => {
+    const rational1 = new RationalNumber(3, 4);
+    const rational2 = new RationalNumber(1, 4);
+    const result = rational1.substract(rational2);
+    expect(result.numerator).toBe(1);
+    expect(result.denominator).toBe(2);
+  });
+
+  it('should multiply two RationalNumbers correctly', () => {
+    const rational1 = new RationalNumber(2, 3);
+    const rational2 = new RationalNumber(3, 4);
+    const result = rational1.multiply(rational2);
+    expect(result.numerator).toBe(6);
+    expect(result.denominator).toBe(12);
+  });
+
+  it('should divide two RationalNumbers correctly', () => {
+    const rational1 = new RationalNumber(3, 4);
+    const rational2 = new RationalNumber(2, 5);
+    const result = rational1.divide(rational2);
+    expect(result.numerator).toBe(15);
+    expect(result.denominator).toBe(8);
+  });
+
+  it('should represent a RationalNumber as a string', () => {
+    const rational = new RationalNumber(5, 6);
+    expect(rational.toString()).toBe("5/6");
   });
 });
